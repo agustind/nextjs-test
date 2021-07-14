@@ -1,5 +1,7 @@
+import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Layout from '../components/Layout'
+import { useState, useEffect } from 'react'
 
 // fetches data from an external source and makes it available to the page component
 export async function getStaticProps() {
@@ -12,15 +14,15 @@ export async function getStaticProps() {
 export default function Home({data}) {
 
     return (
-        <Layout>
-            <div className={styles.container}>
-                {data.map((event, i) =>
-                    <div key={i}>
-                        {event.name} - {event.ticket_link}
-                    </div>
-                )}
-            </div>
-        </Layout>
+
+        <div className={styles.container}>
+            {data.map((event, i) =>
+                <div key={i}>
+                    {event.name} - {event.ticket_link}
+                </div>
+            )}
+        </div>
+        
     );
 
 }
