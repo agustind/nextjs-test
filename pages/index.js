@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 
 // fetches data from an external source and makes it available to the page component
 export async function getStaticProps() {
-    const res = await fetch(`http://localhost:8055/items/events`)
+    const res = await fetch(`http://142.93.230.223/items/events`)
     const data = await res.json()
     return { props: {data: data.data} }
 }
